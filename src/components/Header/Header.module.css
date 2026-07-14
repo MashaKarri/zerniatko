@@ -22,6 +22,8 @@
 .header__list {
   display: flex;
   gap: 32px;
+  justify-content: center;
+  align-items: center;
 }
 
 .header__auth {
@@ -42,12 +44,23 @@
   padding: 4px 10px 4px 10px;
 }
 .header__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.5;
   color: #000;
+  flex-shrink: 0;
+  padding: 7px 12px;
 
   /* color: var(--color-scheme-5-text); */
+}
+
+.header__link_active {
+    color: #434343;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
 .header__button {
