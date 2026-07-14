@@ -6,7 +6,6 @@ import { Container } from "../Container/ContainerLayout.jsx";
 
 export default function Header() {
   const setActiveClass = ({ isActive }) => isActive ? `${style.header__link} ${style.header__link_active}` : style.header__link;
-  
   return (
     <header className={style.header}>
       <Container>
