@@ -2,6 +2,8 @@ import { useState } from "react";
 import CategoriesList from "../../components/CategoriesList/CategoriesList";
 import { Container } from "../../components/Container/ContainerLayout.jsx";
 import style from "./CategoriesList.module.css";
+import Header from "../../components/Header/Header.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
 
 export default function CategoriePage() {
   const totalItems = 12;
@@ -11,8 +13,10 @@ export default function CategoriePage() {
     setVisibleCount((prev) => prev + 2);
   };
 
-  return (
-    <main className={style.categorie}>
+  return (<>
+  <Header />
+  <main className={style.categorie}>
+      
       <Container>
         <h2 className={style.categorie__title}>Категорії</h2>
 
@@ -29,5 +33,9 @@ export default function CategoriePage() {
         </div>
       </Container>
     </main>
+  <Footer/>
+  </>
+ 
+    
   );
 }
