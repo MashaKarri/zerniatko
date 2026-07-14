@@ -33,82 +33,149 @@
   border-color: #000000;
 }
 
-.categories_container ul {
+.slider_wrapper {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  gap: 24px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.categories_container li {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background: transparent;
-  padding: 0;
-}
-
-.categories_container img {
+  align-items: center;
   width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 16px;
 }
 
-.categories_container img:not(:first-child) {
+.arrow_btn {
+  position: absolute;
+  top: 120px;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+.arrow_btn:hover {
+  background-color: #e6b800;
+}
+
+.arrow_left {
+  left: -22px;
+}
+
+.arrow_right {
+  right: -22px;
+}
+
+/* Контейнер теперь сам является скролл-зоной */
+.categories_container {
+  width: 100%;
+  overflow-x: auto !important;
+  scrollbar-width: none;
+}
+
+.categories_container::-webkit-scrollbar {
   display: none;
 }
 
-.categories_container h3,
-.categories_container li strong,
-.categories_container .card_title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #000000;
-  margin: 0 0 8px 0;
+.categories_container :global(ul) {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 24px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+  width: max-content !important; /* Заставляет контейнер растягиваться под все карты */
 }
 
-.categories_container p,
-.categories_container .card_descr {
-  font-size: 14px;
-  line-height: 1.4;
-  color: #666666;
-  margin: 0;
+.categories_container :global(li) {
+  flex: 0 0 324px !important; /* Запрещает сжиматься (0) и запрещает расти (0) */
+  width: 324px !important;
+  min-width: 324px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.categories_container :global(img) {
+  width: 100% !important;
+  height: 240px !important;
+  object-fit: cover !important;
+  border-radius: 12px !important;
+  margin-bottom: 16px !important;
+  display: block !important;
+}
+
+.categories_container :global(h4),
+.categories_container :global(h3) {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #000000 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.categories_container :global(p) {
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  color: #666666 !important;
+  margin: 0 !important;
 }
 
 @media (max-width: 900px) and (min-width: 600px) {
   .main_text {
     font-size: 28px;
   }
-
-  .categories_container ul {
-    gap: 20px;
-  }
-
-  .categories_container li:nth-child(3) {
-    display: none;
+  .arrow_btn {
+    top: 110px;
   }
 }
 
 @media (max-width: 599px) {
   .section {
-    padding: 32px 0;
+    padding: 40px 0;
+  }
+
+  .main_info {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
   }
 
   .main_text {
-    font-size: 24px;
+    font-size: 28px;
+    max-width: 60%;
   }
 
   .all_categories_btn {
     font-size: 12px;
     padding: 6px 12px;
+    margin-top: 6px;
   }
 
-  .categories_container li:nth-child(2),
-  .categories_container li:nth-child(3) {
-    display: none;
+  .arrow_btn {
+    top: 105px;
+  }
+
+  .arrow_left {
+    left: 10px;
+  }
+
+  .arrow_right {
+    right: 10px;
+  }
+
+  .categories_container :global(li) {
+    flex: 0 0 calc(100vw - 32px) !important;
+    width: calc(100vw - 32px) !important;
+    min-width: calc(100vw - 32px) !important;
+  }
+
+  .categories_container :global(img) {
+    height: 210px !important;
   }
 }
