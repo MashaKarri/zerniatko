@@ -1,5 +1,7 @@
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+// import "./App.css";
+import { Route, Routes, NavLink } from "react-router-dom";
 import MainPage from "./pages/MainPage/MainPage";
 import CategoriePage from "./pages/СategoriesPage/CategoriesPage";
 import ProductsPage from "./pages/ProductsPage/ProductsPage";
@@ -18,6 +20,12 @@ function App() {
             <ProductsPage />
       <RegisterPage />
     </>
+    <Routes>
+      <Route path="/zerniatko" element={<MainPage />} />
+      <Route path="/zerniatko/categories" element={<CategoriePage />} />
+      <Route path="/zerniatko/products" element={<ProductsPage />} />
+      <Route path="/zerniatko/register" element={<RegisterPage />} />
+    </Routes>
   );
 }
 

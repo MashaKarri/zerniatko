@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import button from "../../assets/button.svg";
 import style from "./Header.module.css";
@@ -29,7 +30,7 @@ export default function Header() {
  
               <a className={style.header__link} href="#">
                 Товари
-              </a>
+              </NavLink>
             </li>
             <li className={style.header__item}>
    
@@ -44,13 +45,13 @@ export default function Header() {
             
               <a className={style.header__link} href="#">
                 Вхід
-              </a>
+              </NavLink>
             </li>
             <li className={style.header__item}>
               
               <a className={style.header__link} href="#">
                 Реєстрація
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>
