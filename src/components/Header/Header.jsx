@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import button from "../../assets/button.svg";
 import style from "./Header.module.css";
@@ -8,36 +9,36 @@ export default function Header() {
     <header className={style.header}>
       <Container>
         <nav className={style.header__navigation}>
-          <a href="#" className={style.header__logo}>
+          <NavLink to="/zerniatko" className={style.header__logo}>
             <img className={style.header__icon} src={logo} alt="Logo" />
-          </a>
+          </NavLink>
           <ul className={style.header__list}>
             <li className={style.header__item}>
-              <a className={style.header__link} href="#">
+              <NavLink className={style.header__link} to="/zerniatko">
                 Головна
-              </a>
+              </NavLink>
             </li>
             <li className={style.header__item}>
-              <a className={style.header__link} href="#">
+              <NavLink className={style.header__link} to="/zerniatko/products">
                 Товари
-              </a>
+              </NavLink>
             </li>
             <li className={style.header__item}>
-              <a className={style.header__link} href="#">
+              <NavLink className={style.header__link} to="/zerniatko/categories">
                 Категорії
-              </a>
+              </NavLink>
             </li>
           </ul>
           <ul className={style.header__auth}>
             <li className={style.header__item}>
-              <a className={style.header__link} href="#">
+              <NavLink className={style.header__link} to="/zerniatko/login">
                 Вхід
-              </a>
+              </NavLink>
             </li>
             <li className={style.header__item}>
-              <a className={style.header__link} href="#">
+              <NavLink className={style.header__link} to="/zerniatko/register">
                 Реєстрація
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>
