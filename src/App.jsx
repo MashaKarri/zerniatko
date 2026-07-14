@@ -9,14 +9,12 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 function App() {
   return (
-    <>
-      <Routes>
-      <Route path="/zerniatko" element={<MainPage />} />
+    <Routes>
+      <Route path="/zerniatko/" element={<MainPage />} />
       <Route path="/zerniatko/categories" element={<CategoriePage />} />
       <Route path="/zerniatko/products" element={<ProductsPage />} />
       <Route path="/zerniatko/register" element={<RegisterPage />} />
     </Routes>
-    </>
   );
 }
 
