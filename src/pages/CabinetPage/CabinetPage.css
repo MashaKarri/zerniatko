@@ -161,7 +161,3 @@
   font-weight: 600;
   cursor: pointer;
 }
-
-.logout-btn:hover {
-  transform: scale(1.03);
-}
